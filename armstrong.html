@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>www.armstrong.com</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+       
+       body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right,#00c9FF,#92FE90);
+        }
+
+        .div1 {
+            
+            border-radius: 15px;
+            height: 300px;
+            text-align: center;
+            width: 777px;
+            padding: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #92FE90;
+            color: #000000;
+            border: 2px solid;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #66c665;
+        }
+
+        #output {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+    <h1>Enter a Number to check Armstrong</h1>
+    <input type="number" id="num" placeholder="Enter a number">
+    <span>
+        <input type="submit" value="Submit" onclick="armstong()">
+    </span>
+    <p id="output"></p>
+
+   <div>
+
+   <script>
+    function armstong(){
+        let num = document.getElementById("num").value;
+        let numstr = num.toString();
+        let numlen = num.length;
+
+        let arm = 0;
+        for(let i = 0; i<numlen;i++){
+            arm+=Math.pow(parseInt(numstr[i]),numlen);
+        }
+
+        if(arm==num){
+            document.getElementById("output").innerText=`${num} is an Armstrong Number`;
+        }else{
+            document.getElementById("output").innerText=`${num} is Not an Armstrong Number`;
+        }
+    }
+   </script>
+</body>
+
+</html>
