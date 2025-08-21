@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <style>
+    body{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right,#00C9FF,#92FE90);
+    }
+    .container1{
+        position: relative;
+        width: 777px;
+        height: 300px;
+        text-align: center;
+        top: 150px;
+        color: black;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+    }
+    input[type="submit"]{
+        background-color: #92FE90;
+        position: relative;
+        padding: 1px;
+        width: 20%;
+        height: 25px;
+        border-radius: 5px;
+    }
+
+    input[type="number"]{
+        position: relative;
+        padding: 1px;
+        width: 50%;
+        height: 25px;
+    }
+    p{
+        color: black;
+        font-size: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bolder;
+    }
+   </style>
+</head>
+<body>
+    <!-- Using JavaScript function display factorial of a number.
+     Accept the number from the
+    user. -->
+    <div class="container1">
+        <h1>Enter a Number : </h1>
+        <input type="number" id="num" placeholder="Enter a Number">
+        <input type="submit" onclick="factorial()" value="Check"><br>
+        <h1>The Factorial of the Number is :</h1>
+        <p id="output"></p>
+    </div>
+    <script>
+        function factorial(){
+            let num=parseInt(document.getElementById("num").value);
+            let fact=1;
+
+            if(isNaN(num) || num<0){
+                document.getElementById("output").innerText="Enter a Valid Number";
+                return;
+            }else{
+            for(let i=1;i<=num;i++){
+                fact*=i;
+            }
+        }
+
+            document.getElementById("output").innerText=fact;
+        }
+    </script>
+</body>
+</html>
