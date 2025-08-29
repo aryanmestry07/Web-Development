@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <style>
+    body{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #36d1dc, #5b86e5);
+
+
+    }
+    div{
+        position: relative;
+        width: 777px;
+        height: 300px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgb(0,0,0,0.2);
+        text-align: center;
+        font-size: 25px;
+        top: 50px;
+    }
+   </style>
+</head>
+<body>
+    <div>
+        <h1>Current Date And Time </h1>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function getCurrentDateTime(){
+            let t = new Date();
+
+            // let date = String(t.getDate()).padStart(2,'0');
+            // let month = String(t.getMonth() + 1).padStart(2,'0');
+            // let year = String(t.getFullYear());
+
+
+            // let hours = String(t.getHours()).padStart(2,'0');
+            // let minutes = String(t.getMinutes()).padStart(2,'0');
+            // let seconds = String(t.getSeconds()).padStart(2,'0');
+              
+            // let formattedDate = `${date}-${month}-${year}`;
+            // let formattedTime = `${hours}-${minutes}-${seconds}`;
+
+            return `${t}`;
+        }
+
+         function updatedate(){
+            document.getElementById("output").innerHTML=getCurrentDateTime();
+         }
+
+         setInterval(updatedate,1000);
+        
+    </script>
+</body>
+</html>
